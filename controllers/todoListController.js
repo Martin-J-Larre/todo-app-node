@@ -25,22 +25,11 @@ const getOneTodo = async (req, res) =>{
         res.status(500).json({message: err});
     }
 }
-const updateTodo = async (req, res)=>{
-    try {
-        todoUpdated = await Todo.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json({todoUpdated});
-    } catch (error) {
-        res.status(500).json({message: err});
-    }
+const updateTodo = (req, res)=>{
+    res.send('update one');
 }
-const deleteTodo = async (req, res)=>{
-    try {
-        const todoDeleted = await Todo.findByIdAndDelete(req.params.id);
-    res.status(200).json({todoDeleted});
-    } catch (error) {
-        res.status(500).json({message: err});
-    }
-
+const deleteTodo = (req, res)=>{
+    res.send('deleted');
 }
 
 
